@@ -23,6 +23,7 @@ class CustomFlatButton extends StatelessWidget {
         border: borderColor != null ? Border.all(color: borderColor) : null
       ),
       child: FlatButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         onPressed: onPressed != null ? onPressed : () {},
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
