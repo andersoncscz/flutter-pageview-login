@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pageview_login_app/screens/login/widgets/customFlatButton.dart';
 import 'package:pageview_login_app/screens/login/widgets/custom_textformfield.dart';
+import 'package:pageview_login_app/screens/login/widgets/provider_pagecontroller.dart';
 
 class SignUpForm extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     
-    Color accentColor = Theme.of(context).accentColor;
+    final Color accentColor = Theme.of(context).accentColor;
 
     return Form(
       key: _formKey,
@@ -63,13 +64,16 @@ class _SignUpFormState extends State<SignUpForm> {
           Container(
             padding: EdgeInsets.only(top: 24, bottom: 48),
             width: double.infinity,
-            child: Text(
-              'Already have an account?',
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                fontSize: 18,
-                color: accentColor,
-                fontWeight: FontWeight.bold
+            child: GestureDetector(
+              onTap: () => ProviderPageController.of(context).toPage(2),
+              child: Text(
+                'Already have an account?',
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: accentColor,
+                  fontWeight: FontWeight.bold
+                ),
               ),
             ),
           ),

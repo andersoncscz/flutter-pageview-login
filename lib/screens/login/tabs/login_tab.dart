@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pageview_login_app/screens/login/widgets/customFlatButton.dart';
+import 'package:pageview_login_app/screens/login/widgets/provider_pagecontroller.dart';
 
 class LoginTab extends StatelessWidget {
-  
-  final PageController pageController;
-
-  LoginTab({@required this.pageController});
 
   @override
   Widget build(BuildContext context) {
@@ -43,10 +40,7 @@ class LoginTab extends StatelessWidget {
               ),
               SizedBox(height: 30),
               CustomFlatButton(
-                onPressed: () => pageController.animateToPage(0, 
-                  duration: Duration(milliseconds: 350),
-                  curve: Curves.easeInOut
-                ),
+                onPressed: () => ProviderPageController.of(context).toPage(0),
                 label: 'SIGN UP', 
                 textColor: Colors.white, 
                 backgroundColor: accentColor, 
@@ -54,10 +48,7 @@ class LoginTab extends StatelessWidget {
               ),
               SizedBox(height: 30),
               CustomFlatButton(
-                onPressed: () => pageController.animateToPage(2, 
-                  duration: Duration(milliseconds: 350),
-                  curve: Curves.easeInOut
-                ),                
+                onPressed: () => ProviderPageController.of(context).toPage(2),
                 label: 'LOGIN', 
                 textColor: accentColor, 
                 backgroundColor: 
